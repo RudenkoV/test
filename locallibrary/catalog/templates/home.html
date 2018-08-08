@@ -1,0 +1,29 @@
+{% load static %} <!DOCTYPE html>
+
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Index</title>  
+
+</head>  
+<body>  
+ 
+<h1> Django tuttorial </h1>
+
+<ul>
+
+  {% if user.is_authenticated %}
+
+  Hello, {{user.name}}
+
+    <li><a href="{% url 'logout' %}">Logout</a></li>
+
+  {% else %}
+    <li><a href="{% url 'login' %}">LogIn</a></li>
+    <li><a href="{% url 'signup' %}">SignUp</a></li>
+    <li><a href="">Log in with Google</a></li>
+
+ {% endif %}
+
+</body>  
+</html>  
